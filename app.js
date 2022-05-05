@@ -1,17 +1,15 @@
 //// ----------- lab 7.2 ----------->
 const express = require("express");
-const validator = require("validator");
-const { v4: uuidv4 } = require("uuid");
-const createError = require("./utils/createError");
-const todoRoute = require("./routes/todoRoute");
 
-const { readTodos, writeTodos } = require("./services/todoService");
+const todoRoute = require("./routes/todoRoute");
 
 const app = express();
 
 app.use(express.json());
 
 app.use("/todos", todoRoute);
+// app.use("/users", usersRoute);
+// app.use("/products", productRoute);
 
 //// ------- for Error function ------->
 app.use((err, req, res, next) => {
